@@ -1,0 +1,21 @@
+# Keil MDK build output (编译产物)
+Output/
+Objects/
+Listings/
+DebugConfig/
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.map
+*.htm
+*.lnp
+*.sct
+*.dep
+*.iex
+*.lst
+
+# Keil per-user UI config (个人界面配置，非代码)
+*.uvoptx
+*.uvguix.*
