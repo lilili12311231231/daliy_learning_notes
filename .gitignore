@@ -19,3 +19,6 @@ DebugConfig/
 # Keil per-user UI config (个人界面配置，非代码)
 *.uvoptx
 *.uvguix.*
+
+# VS Code 编辑器配置
+.vscode/
