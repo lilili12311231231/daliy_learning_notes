@@ -1,0 +1,43 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil\ARM\ARMCC\Bin'
+Build target 'LED'
+compiling can.c...
+..\..\Drivers\BSP\CAN\can.c(35): error:  #136: struct "<unnamed>"  has no field "SynJumpWidth"
+      g_canx_handler.Init.SynJumpWidth = tsjw; /* 重新同步跳跃时间单元 */
+..\..\Drivers\BSP\CAN\can.c(36): error:  #136: struct "<unnamed>"  has no field "TimeSegment1"
+      g_canx_handler.Init.TimeSegment1 = tbs1; /* 时间段1的时间单元 */
+..\..\Drivers\BSP\CAN\can.c(37): error:  #136: struct "<unnamed>"  has no field "TimeSegment2"
+      g_canx_handler.Init.TimeSegment2 = tbs2; /* 时间段2的时间单元 */    
+..\..\Drivers\BSP\CAN\can.c(57): error:  #20: identifier "CAN_FilterType" is undefined
+      CAN_FilterType sFilterConfig; /* CAN 过滤器配置 */
+..\..\Drivers\BSP\CAN\can.c(92): warning:  #223-D: function "CAN_Rx_GPIO_CLK_ENABLE" declared implicitly
+          CAN_Rx_GPIO_CLK_ENABLE();/* CAN_RX脚时钟使能 */
+..\..\Drivers\BSP\CAN\can.c(93): warning:  #223-D: function "CAN_Tx_GPIO_CLK_ENABLE" declared implicitly
+          CAN_Tx_GPIO_CLK_ENABLE();/* CAN_TX脚时钟使能 */
+..\..\Drivers\BSP\CAN\can.c(98): error:  #20: identifier "CAN_TX_GPIO_PIN" is undefined
+          gpio_init_struct.Pin = CAN_TX_GPIO_PIN;
+..\..\Drivers\BSP\CAN\can.c(103): error:  #20: identifier "CAN_TX_GPIO_PORT" is undefined
+          HAL_GPIO_Init(CAN_TX_GPIO_PORT, &gpio_init_struct); /* CAN_TX脚 模式设置 */
+..\..\Drivers\BSP\CAN\can.c(105): error:  #20: identifier "CAN_RX_GPIO_PIN" is undefined
+          gpio_init_struct.Pin = CAN_RX_GPIO_PIN;
+..\..\Drivers\BSP\CAN\can.c(106): error:  #20: identifier "CAN_RX_GPIO_PORT" is undefined
+          HAL_GPIO_Init(CAN_RX_GPIO_PORT, &gpio_init_struct); /* CAN_RX脚 模式设置 必须设置成输入模式*/
+..\..\Drivers\BSP\CAN\can.c(138): error:  #36: the #if for this directive is missing
+   #endif
+..\..\Drivers\BSP\CAN\can.c(153): error:  #20: identifier "g_canx_txheader" is undefined
+      g_canx_txheader.Stdid = id; /* 标准ID */
+..\..\Drivers\BSP\CAN\can.c(186): warning:  #223-D: function "HAL_CAN_GetRxFifoFIllLevel" declared implicitly
+      if(HAL_CAN_GetRxFifoFIllLevel(&g_canx_handler, CAN_RX_FIFO0) == 0) /*没有数据被接收到*/
+..\..\Drivers\BSP\CAN\can.c(191): error:  #20: identifier "g_canx_rxheader" is undefined
+      if(HAL_CAN_GetRxMessage(&g_canx_handler, CAN_RX_FIFO0, &g_canx_rxheader, buf, &g_canx_rxheader.DLC) != HAL_OK) /* 接收CAN消息读取数据 */
+..\..\Drivers\BSP\CAN\can.c(191): error:  #140: too many arguments in function call
+      if(HAL_CAN_GetRxMessage(&g_canx_handler, CAN_RX_FIFO0, &g_canx_rxheader, buf, &g_canx_rxheader.DLC) != HAL_OK) /* 接收CAN消息读取数据 */
+..\..\Drivers\BSP\CAN\can.c(196): error:  #20: identifier "g_canx_rxheader" is undefined
+      if (g_canx_rxheader.StdId!= id || g_canx_rxheader.IDE != CAN_ID_STD || g_canx_rxheader.RTR != CAN_RTR_DATA)       /* 接收到的ID不对 / 不是标准帧 / 不是数据帧 */
+..\..\Drivers\BSP\CAN\can.c(200): error:  #20: identifier "g_canx_rxheader" is undefined
+      return g_canx_rxheader.DLC;
+..\..\Drivers\BSP\CAN\can.c(201): warning:  #1-D: last line of file ends without a newline
+   }
+..\..\Drivers\BSP\CAN\can.c: 4 warnings, 14 errors
+"..\..\Output\atk_f407.axf" - 14 Error(s), 4 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:03
